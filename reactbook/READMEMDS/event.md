@@ -9,6 +9,8 @@ onClick="함수이름()" (x)
 onClick={함수이름} (o)
 )
 
+---
+
 input 에서 입력하는 이벤트는 onChange 로 대신합니다
 
 ```js
