@@ -1,28 +1,25 @@
-import React, { useState } from "react";
+# event
 
-const Say = () => {
-const [message, setMessage] = useState("");
-const onClickEnter = () => setMessage("안녕하세요!");
-const onClickLeave = () => setMessage("안녕히 가세요!");
+소문자 대신 camelCase를 사용합니다.
+ex(onclick => onClick)
 
-const [color, setColor] = useState("black");
+문자열이 아닌 함수로 전달합니다.
+ex(
+onClick="함수이름()" (x)
+onClick={함수이름} (o)
+)
 
-return (
-<div>
-<button onClick={onClickEnter}>입장</button>
-<button onClick={onClickLeave}>퇴장</button>
-<h1 style={{ color }}>{message}</h1>
-<button style={{ color: `red` }} onClick={() => setColor(`red`)}>
-빨간색
-</button>
-<button style={{ color: `green` }} onClick={() => setColor(`green`)}>
-초록색
-</button>
-<button style={{ color: `blue` }} onClick={() => setColor(`blue`)}>
-파란색
-</button>
-</div>
-);
-};
+input 에서 입력하는 이벤트는 onChange 로 대신합니다
 
-export default Say;
+```js
+App() {
+    return (
+      <>
+        <input
+          onChange={(e) => {console.log(e);}
+          }
+        />
+      </>
+    );
+}
+```
