@@ -1,13 +1,19 @@
 import EventPractice from './EventPractice';
 
+function MyComponent(props){
+  return (
+    <div>
+    제 이름은 {props.name}입니다.
+    </div>
+  );
+};
+
 function App() {
-  // return (
-  //   <>
-  //   <EventPractice />
-  //   </>
-  // );
-  const name = `리액트`;
-  return <div>{name === `리액트` && <h1>리액트입니다.</h1>}</div>;
+  return (
+    <>
+    <MyComponent name="펭귄"/>
+    </>
+  );
 }
 
 export default App;
