@@ -1,17 +1,9 @@
-import EventPractice from './EventPractice';
-
-function MyComponent(props){
-  return (
-    <div>
-    제 이름은 {props.name}입니다.
-    </div>
-  );
-};
+import EventPractice from "./EventPractice";
 
 function App() {
   return (
     <>
-    <MyComponent name="펭귄"/>
+      <EventPractice />
     </>
   );
 }
