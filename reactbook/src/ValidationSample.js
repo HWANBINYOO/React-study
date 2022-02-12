@@ -1,39 +1,47 @@
-import React, { Component } from 'react';
-import './ValidationSample.css';
-
+import React, { Component } from "react";
+import "./ValidationSample.css";
 
 class ValidationSample extends Component {
   state = {
-    password: '',
+    password: "",
     clicked: false,
-    validated: false
+    validated: false,
   };
 
-handleChange = (e) => {
+  handleChange = (e) => {
     this.setState({
       password: e.target.value,
     });
   };
 
-handleButtonClick => () => {
+  handleButtonClick = () => {
     this.setState({
       clicked: true,
-      validated: this.state.password === '0000'
+      validated: this.state.password === "0000",
     });
+    this.input.focus();
   };
 
-render() {
+  render() {
     return (
       <div>
         <input
-          type='password'
+          ref={(ref) => (this.input = ref)}
+          type="password"
           value={this.state.password}
           onChange={this.handleChange}
-          className={this.state.clicked ? (this.state.validated ? 'success' : 'failure') : ''}
+          className={
+            this.state.clicked
+              ? this.state.validated
+                ? "success"
+                : "failure"
+              : ""
+          }
         />
         <button onClick={this.handleButtonClick}>검증하기</button>
       </div>
     );
-  };
-};
+  }
+}
+
 export default ValidationSample;
