@@ -1,9 +1,9 @@
 # event
 
-소문자 대신 camelCase를 사용합니다.
+소문자 대신 camelCase를 사용합니다
 ex(onclick => onClick)
 
-문자열이 아닌 함수로 전달합니다.
+문자열이 아닌 함수로 전달합니다
 ex(
 onClick="함수이름()" (x)
 onClick={함수이름} (o)
