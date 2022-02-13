@@ -45,4 +45,4 @@ function reducer(state, action) {
 }
 ```
 
-redicer함수는 `switch`문을이용해 카운트해줍니다
+reducer함수는 `switch`문을이용해 카운트해줍니다

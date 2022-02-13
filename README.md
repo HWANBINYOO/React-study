@@ -13,4 +13,5 @@
 * Hooks 🤔
   - [useState](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useState.md)
   * [useEffect](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useEffect.md)
-  - [useReducer]()
+  - [useReducer](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useReducer.md)
+  * [useMemo]()

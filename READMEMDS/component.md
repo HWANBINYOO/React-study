@@ -24,4 +24,4 @@ class App extends Component {
 }
 ```
 
-(함수형이 클래스보다 더 편하다)
+> (함수형이 클래스보다 더 편하다)
