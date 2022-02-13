@@ -46,3 +46,5 @@ function reducer(state, action) {
 ```
 
 reducer함수는 `switch`문을이용해 카운트해줍니다
+
+> [참고자료](https://www.daleseo.com/react-hooks-use-reducer/)

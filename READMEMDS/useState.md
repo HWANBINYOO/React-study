@@ -14,5 +14,3 @@ import { useState } from "react";
 
 const [<상태 값 저장 변수>, <상태값 갱신 함수>] = useState(<상태 초기값>); \\선언방식
 ```
-
-> [참고자료](https://www.daleseo.com/react-hooks-use-reducer/)
