@@ -1,4 +1,4 @@
-# 리엑트를 다루는 기술 🐧
+# 리엑트를 다루는 기술
 
 - 기초 🪵
   - [Fragment](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/Fragment.md)
@@ -14,4 +14,4 @@
   - [useState](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useState.md)
   * [useEffect](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useEffect.md)
   - [useReducer](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useReducer.md)
-  * [useMemo]()
+  * [useMemo](https://github.com/HWANBINYOO/React-study/blob/main/READMEMDS/useMemo.md)
