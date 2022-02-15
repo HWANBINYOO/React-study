@@ -1,70 +1,100 @@
-import React, { useState, useRef, useCallback } from 'react';
-import TodoList from './components/TodoList';
-import TodoInsert from './components/Todolnsert';
-import TodoTemplate from './components/TodoTemplate';
+import React, { useRef, useCallback, useState } from 'react';
+
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: '리액트의 기초 알아보기',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: '컴포넌트 스타일링하기',
-      checked: true,
-    },
-    {
-      id: 3,
-      text: '일정 관리 앱 만들어 보기',
-      checked: false,
-    },
-  ]);
+  const nextId = useRef(1);
+  const [form, setForm] = useState({ name: "", username: "" });
+  const [data, setData] = useState({
+    array: [],
+    uselessValue: null
+  });
 
-  // 고윳값으로 사용될 id
-  // ref를 사용하여 변수 담기
-  //https://thebook.io/080203/ch10/03/02/03/
-  const nextId = useRef(4);
 
-  const onInsert = useCallback(
-    (text) => {
-      const todo = {
+
+// input 수정을 위한 함수
+  const onChange = useCallback(
+    e => {
+      const { name, value } = e.target;
+      setForm({
+        ...form,
+        [name]: [value]
+      });
+    },
+    [form]
+  );
+
+
+
+// form 등록을 위한 함수
+  const onSubmit = useCallback(
+    e => {
+      e.preventDefault();
+      const info = {
         id: nextId.current,
-        text,
-        checked: false,
+        name: form.name,
+        username: form.username
       };
-      setTodos(todos.concat(todo));
-      nextId.current += 1; // nextId 1씩 더하기
-    },
-    [todos],
-  );
 
-  //https://thebook.io/080203/ch10/03/04/01/
+
+
+      <span class="co44">// array</span><span class="co44">에</span> <span class="co44">새</span> <span class="co44">항목</span> <span class="co44">등록</span>
+      <span class="co47">setData</span><span class="co33">({</span>
+        <span class="co35">...</span><span class="co33">data,</span>
+        array: data.array.concat(info)
+      });
+        <span class="co44">// form </span><span class="co44">초기화</span>
+        <span class="co47">setForm</span><span class="co33">({</span>
+          name: '',
+          username: ''
+        });
+        nextId.current += 1;
+      },
+      [data, form.name, form.username]
+    );
+  
+    // 항목을 삭제하는 함수
   const onRemove = useCallback(
-    (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id));
+    id => {
+      setData({
+        ...data,
+        array: data.array.filter(info => info.id !== id)
+      });
     },
-    [todos],
+    [data]
   );
 
-  const onToggle = useCallback(
-    (id) => {
-      setTodos(
-        todos.map((todo) =>
-          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
-        ),
-      );
-    },
-    [todos],
-  );
 
-  return (
-    <TodoTemplate>
-      <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
-    </TodoTemplate>
+
+return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          name="username"
+          placeholder="아이디"
+          value={form.username}
+          onChange={onChange}
+        />
+        <input
+          name="name"
+          placeholder="이름"
+          value={form.name}
+          onChange ={onChange}
+        />
+        <button type="submit">등록</button>
+      </form>
+      <div>
+        <ul>
+          {data.array.map(info => (
+            <li key={info.id} onClick={() => onRemove(info.id)}>
+              {info.username} ({info.name})
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
+
+
 
 export default App;
