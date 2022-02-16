@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# immer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+구조가 복잡한 객체도 매우 쉽고 짧은 코드를 사용하여 `불변성`을 유지하면서 업데이트해 줄 수 있는 라이브러리입니다
 
-## Available Scripts
+### 불변성이란?
 
-In the project directory, you can run:
+사전적으로 값이나 상태를 변경할 수 없는 것을 의미합니다
 
-### `yarn start`
+### 쓰는이유
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+불변성을 유지하기위해서 아래 보기와 같이 얕은 복사를 하게되는데 그러면 코드가 길어지고 구조의 깊이가 깇어질 수록 상태는 접근조차 어려워 질 수 있습니다
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```js
+const [state, setState] = useState({
+  id: 1,
+  name: stan,
+});
 
-### `yarn test`
+setState({
+  ...state,
+  nickName: beda,
+});
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+이러한 문제를 해결하기 위해 불변성을 유지시켜주면서 코드를 단순하고 직관적으로 짤 수 있는 immer를 씁니다
 
-### `yarn build`
+produce 함수 기본 형태
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+const newxtState = produce(currentState, (draft) => {
+  funtion;
+});
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-currentState: 업데이트하고자 하는 현재 상태값
+-draft: 현재 상태값을 복사하여 사용
+-function : 어떻게 없데이트하고 싶을지 정의하는 함수
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+적용결과
 
-### `yarn eject`
+```js
+import produce from "immer";
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+const [state, setState] = useState({
+  id: 1,
+  name: stan,
+});
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+setState(
+  produce(state, (draft) => {
+    draft.nickName = beda;
+  })
+);
+```
