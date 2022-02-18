@@ -1,6 +1,5 @@
 // 뉴스 데이터가 들어 있는 배열을
 //컴포넌트 배열로 변환하여 렌더링해 주는 컴포넌트
-import React, { useState, useEffect } from 'react';
 import NewsItem from './NewsItem';
 import styled from 'styled-components';
 import axios from 'axios';
