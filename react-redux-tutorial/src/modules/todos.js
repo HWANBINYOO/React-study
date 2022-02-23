@@ -3,7 +3,7 @@ const INSERT = 'INSERT'; // 새로운 todo를 등록함
 const TOGGLE = 'todos/TOGGLE'; //todo를 체크/체크 해제함
 const REMOVE = 'todos/REMOVE'; //todo를 제거함
 
-export const onChangeInput = (input) => ({
+export const changeInput = (input) => ({
   type: CHANGE_INPUT,
   input,
 });
@@ -44,7 +44,6 @@ const initialState = {
     },
   ],
 };
-
 function todos(state = initialState, action) {
   switch (action.type) {
     case CHANGE_INPUT:
