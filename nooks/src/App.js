@@ -1,10 +1,12 @@
 // import UseInputApp from "./useStates/UseInput";
-import UseTabsApp from "./useStates/useTabs";
+// import UseTabsApp from "./useStates/UseTabs";
+// import UseTitleApp from "./useEffect/useTitle";
 
 const App = () => {
   <>
     {/* <UseInputApp /> */}
-    <UseTabsApp />
+    {/* <UseTabsApp /> */}
+    {/* <UseTitleApp /> */}
   </>;
 };
 
