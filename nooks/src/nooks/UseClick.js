@@ -25,7 +25,7 @@ const UseClickApp = () => {
 
   return (
     <div className="App">
-      <h1 ref="title">Hi</h1>
+      <h1 ref={title}>Hi</h1>
     </div>
   );
 };
