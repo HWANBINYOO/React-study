@@ -1,22 +1,22 @@
 import React, { useEffect, useRef } from "react";
 
 const useClick = (onClick) => {
-  if (typeof onClick !== "function") {
-    //함수가아니면 리턴
-    return;
-  }
   const element = useRef();
   useEffect(() => {
+    if (typeof onClick !== "function") {
+      //함수가아니면 리턴
+      return;
+    }
     if (element.current) {
-      element.current.addEventListner("click", onClick);
+      element.current.addEventListener("click", onClick);
     }
     return () => {
       if (element.current) {
-        element.current.removeEventListener;
+        element.current.removeEventListener("click", onClick);
       }
     };
   }, []);
-  return element;
+  return typeof onClick !== "function" ? element : undefined;
 };
 
 const UseClickApp = () => {
