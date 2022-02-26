@@ -5,3 +5,4 @@
 - useTitle
 - useClick
 - useComfirm
+- useBeforLeave
