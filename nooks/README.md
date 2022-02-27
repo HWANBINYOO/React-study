@@ -6,3 +6,4 @@
 - useClick
 - useComfirm
 - useBeforLeave
+- useFadeIn
