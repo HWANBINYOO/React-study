@@ -11,7 +11,7 @@ const useTitle = (initialTitle) => {
   return setTitle;
 };
 
-const UseTitleApp = () => {
+const useTitleApp = () => {
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Home"), 5000);
   return (
@@ -21,4 +21,4 @@ const UseTitleApp = () => {
   );
 };
 
-export default UseTitleApp;
+export default useTitleApp;

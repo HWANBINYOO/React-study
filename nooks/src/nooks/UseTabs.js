@@ -24,7 +24,7 @@ const useTabs = (initalTab, allTabs) => {
   };
 };
 
-const UseTabsApp = () => {
+const useTabsApp = () => {
   const { currenItem, changItem } = useTabs(1, content);
   return (
     <div>
@@ -36,4 +36,4 @@ const UseTabsApp = () => {
   );
 };
 
-export default UseTabsApp;
+export default useTabsApp;

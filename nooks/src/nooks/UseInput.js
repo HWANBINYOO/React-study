@@ -19,7 +19,7 @@ const useInput = (initialValue, validator) => {
   return { value, onChange };
 };
 
-const UseInputApp = () => {
+const useInputApp = () => {
   // @를 누르면 동작하지 않게 하기
   const maxLen = (value) => !value.includes("@");
   const name = useInput("Mr.", maxLen);
@@ -31,4 +31,4 @@ const UseInputApp = () => {
   );
 };
 
-export default UseInputApp;
+export default useInputApp;

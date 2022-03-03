@@ -22,7 +22,7 @@ const useClick = (onClick) => {
   return typeof onClick !== "function" ? element : undefined;
 };
 
-const UseClickApp = () => {
+const useClickApp = () => {
   const sayHello = () => console.log("say hello");
   const title = useClick(sayHello);
 
@@ -33,4 +33,4 @@ const UseClickApp = () => {
   );
 };
 
-export default UseClickApp;
+export default useClickApp;
