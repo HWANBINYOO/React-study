@@ -7,6 +7,7 @@ const useScroll = () => {
     y: 0,
   });
   const onScroll = () => {
+    //스크롤을 하면 onScroll 이벤트가 실행되게 하고 setState로 지금 x,y값을 불러온다
     setState({ y: window.scrollY, x: window.scrollX });
   };
   useEffect(() => {

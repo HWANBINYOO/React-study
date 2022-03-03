@@ -1,8 +1,8 @@
+```js
 import React, { useState } from "react";
 
 const useInput = (initialValue, validator) => {
   const [value, setValue] = useState(initialValue);
-  //input 값이 바꼈을떄
   const onChange = (event) => {
     const {
       target: { value },
@@ -12,7 +12,6 @@ const useInput = (initialValue, validator) => {
       willUpdate = validator(value);
     }
     if (willUpdate) {
-      //항상업데이트 될 수 있게 하기
       setValue(value);
     }
   };
@@ -32,3 +31,5 @@ const UseInputApp = () => {
 };
 
 export default UseInputApp;
+``;
+```

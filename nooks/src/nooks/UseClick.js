@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
+//클릭하면
 const useClick = (onClick) => {
   const element = useRef();
   useEffect(() => {
@@ -7,9 +8,11 @@ const useClick = (onClick) => {
       //함수가아니면 리턴
       return;
     }
+
     if (element.current) {
       element.current.addEventListener("click", onClick);
     }
+
     return () => {
       if (element.current) {
         element.current.removeEventListener("click", onClick);

@@ -6,6 +6,7 @@ const useTitle = (initialTitle) => {
     const htmlTitle = document.querySelector("title");
     htmlTitle.innerText = title;
   };
+  //타이틀이 바뀔떄 updateTitle 함수 실행
   useEffect(updateTitle, [title]);
   return setTitle;
 };

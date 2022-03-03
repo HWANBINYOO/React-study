@@ -11,7 +11,7 @@ const usePreventLeave = () => {
   return { enablePrevent, disablePrevent };
 };
 
-const UsePreventLeaveApp = () => {
+const usePreventLeaveApp = () => {
   const { enablePrevent, disablePrevent } = usePreventLeave();
   return (
     <div className="App">
@@ -21,4 +21,4 @@ const UsePreventLeaveApp = () => {
   );
 };
 
-export default UsePreventLeaveApp;
+export default usePreventLeaveApp;

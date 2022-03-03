@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
+//둘다 숫자값이 아니면 바로 리턴시킨다
 const useFadeIn = (duration = 1, delay = 0) => {
   if (typeof duration !== "number" || typeof delay !== "number") {
     return;
@@ -17,6 +18,7 @@ const useFadeIn = (duration = 1, delay = 0) => {
 };
 
 const useFadeInApp = () => {
+  //duration 과 delay 값을 준다
   const fadeInH1 = useFadeIn(1, 2);
   const fadeInP = useFadeIn(5, 5);
   return (
