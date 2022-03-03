@@ -1,3 +1,6 @@
+### 알림 보내기(\*)
+
+```js
 const useNotification = (title, options) => {
   if (!("Notification" in window)) {
     return;
@@ -16,7 +19,7 @@ const useNotification = (title, options) => {
   return fireNotif;
 };
 
-const useNotificationApp = () => {
+const App = () => {
   const triggerNotif = useNotification("hello o");
   return (
     <div className="App" style={{ height: "1000vh" }}>
@@ -24,4 +27,5 @@ const useNotificationApp = () => {
     </div>
   );
 };
-export default useNotificationApp;
+export default App;
+```

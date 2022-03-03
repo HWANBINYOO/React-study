@@ -1,3 +1,6 @@
+### 전체화면이 되게하는 버튼과 나가기 버튼
+
+```js
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -22,7 +25,7 @@ const useFullscreen = (callback) => {
   return { element, triggerFull, exitFull };
 };
 
-const useFullscreenApp = () => {
+const App = () => {
   const onFulllS = (isFull) => {
     console.log(isFull ? "We are full" : " we are small");
   };
@@ -38,4 +41,5 @@ const useFullscreenApp = () => {
   );
 };
 
-export default useFullscreenApp;
+export default App;
+```

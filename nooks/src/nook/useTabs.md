@@ -1,3 +1,4 @@
+```js
 import React, { useState } from "react";
 
 const content = [
@@ -24,7 +25,7 @@ const useTabs = (initalTab, allTabs) => {
   };
 };
 
-const useTabsApp = () => {
+const App = () => {
   const { currenItem, changItem } = useTabs(1, content);
   return (
     <div>
@@ -36,4 +37,5 @@ const useTabsApp = () => {
   );
 };
 
-export default useTabsApp;
+export default App;
+```

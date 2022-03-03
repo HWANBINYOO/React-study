@@ -1,3 +1,4 @@
+```js
 import defaultAxios from "axios";
 import { useEffect, useState } from "react";
 import useFadeInApp from "./useFadeIn";
@@ -36,7 +37,7 @@ const useAxios = (opts, axiosInstance = defaultAxios) => {
   return { ...state, refetch };
 };
 //index.js
-const useAxiosApp = () => {
+const App = () => {
   const { loading, error, data, refetch } = useAxios({
     url: "https://yts.mx/api/v2/list_movies.json",
   });
@@ -52,4 +53,5 @@ const useAxiosApp = () => {
   );
 };
 
-export default useFadeInApp;
+export default App;
+```

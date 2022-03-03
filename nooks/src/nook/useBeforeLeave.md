@@ -1,3 +1,6 @@
+### 마우스가 화면 위아래 밖으로 나갈떄
+
+```js
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
@@ -18,7 +21,7 @@ const useBeforLeave = (onBefore) => {
   }, []);
 };
 
-const useBeforLeaveApp = () => {
+const App = () => {
   const begForLife = () => console.log("Pls dont leave");
   useBeforLeave(begForLife);
   return (
@@ -28,4 +31,5 @@ const useBeforLeaveApp = () => {
   );
 };
 
-export default useBeforLeaveApp;
+export default App;
+```

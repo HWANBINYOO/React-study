@@ -1,3 +1,6 @@
+### 클릭이벤트
+
+```js
 import React, { useEffect, useRef } from "react";
 
 //클릭하면
@@ -22,7 +25,7 @@ const useClick = (onClick) => {
   return typeof onClick !== "function" ? element : undefined;
 };
 
-const useClickApp = () => {
+const App = () => {
   const sayHello = () => console.log("say hello");
   const title = useClick(sayHello);
 
@@ -33,4 +36,5 @@ const useClickApp = () => {
   );
 };
 
-export default useClickApp;
+export default App;
+```

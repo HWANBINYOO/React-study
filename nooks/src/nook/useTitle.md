@@ -1,3 +1,6 @@
+### html 타이틀 변경
+
+```js
 import React, { useState, useEffect } from "react";
 
 const useTitle = (initialTitle) => {
@@ -11,7 +14,7 @@ const useTitle = (initialTitle) => {
   return setTitle;
 };
 
-const useTitleApp = () => {
+const App = () => {
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Home"), 5000);
   return (
@@ -21,4 +24,5 @@ const useTitleApp = () => {
   );
 };
 
-export default useTitleApp;
+export default App;
+```

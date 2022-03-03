@@ -1,3 +1,6 @@
+### 온라인,오프라인인지 알려준다
+
+```js
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -21,7 +24,7 @@ const useNetwork = (onChange) => {
   return status;
 };
 
-const useNetworkApp = () => {
+const App = () => {
   const handleNetworkChange = (online) => {
     console.log(online ? "online" : "offline");
   };
@@ -33,4 +36,5 @@ const useNetworkApp = () => {
   );
 };
 
-export default useNetworkApp;
+export default App;
+```

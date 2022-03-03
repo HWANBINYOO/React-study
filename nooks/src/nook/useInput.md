@@ -1,3 +1,6 @@
+### input 설정(일부 키값 안되게 하기, 글자수 제한 걸기 )
+
+```js
 import React, { useState } from "react";
 
 const useInput = (initialValue, validator) => {
@@ -19,7 +22,7 @@ const useInput = (initialValue, validator) => {
   return { value, onChange };
 };
 
-const useInputApp = () => {
+const App = () => {
   // @를 누르면 동작하지 않게 하기
   const maxLen = (value) => !value.includes("@");
   const name = useInput("Mr.", maxLen);
@@ -31,4 +34,5 @@ const useInputApp = () => {
   );
 };
 
-export default useInputApp;
+export default App;
+```

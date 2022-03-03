@@ -1,3 +1,6 @@
+### 스크롤 이벤트
+
+```js
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -17,7 +20,7 @@ const useScroll = () => {
   return state;
 };
 
-const useScrollApp = () => {
+const App = () => {
   const { y } = useScroll();
   return (
     <div className="App" style={{ height: "1000vh" }}>
@@ -26,4 +29,5 @@ const useScrollApp = () => {
   );
 };
 
-export default useScrollApp;
+export default App;
+```

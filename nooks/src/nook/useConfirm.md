@@ -1,5 +1,9 @@
+### comtirm 띄우기
+
+Hooks (x)
+
+```js
 import React from "react";
-// Hooks (x)
 const useConfirm = (message = "", callback) => {
   if (typeof callback !== "function") {
     return;
@@ -14,7 +18,7 @@ const useConfirm = (message = "", callback) => {
   return confirmAction;
 };
 
-const useConfirmApp = () => {
+const App = () => {
   const deleteWorld = () => console.log("Delecting the word");
   const confirmDelete = useConfirm("Are you sure", deleteWorld);
   return (
@@ -24,4 +28,5 @@ const useConfirmApp = () => {
   );
 };
 
-export default useConfirmApp;
+export default App;
+```

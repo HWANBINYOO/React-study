@@ -1,7 +1,11 @@
+## 사이트 나가려고 할떄 경고문주기
+
+```js
+import React from "react";
+
 const usePreventLeave = () => {
   const listener = (event) => {
     event.preventDefault();
-    // 사이트나가려고 할떄 경고문을 준다
     event.returnValue = "";
   };
   //beforeunload 는 window가 닫히기 전에 function이 실행되는걸 허락한다
@@ -11,7 +15,7 @@ const usePreventLeave = () => {
   return { enablePrevent, disablePrevent };
 };
 
-const usePreventLeaveApp = () => {
+const App = () => {
   const { enablePrevent, disablePrevent } = usePreventLeave();
   return (
     <div className="App">
@@ -21,4 +25,5 @@ const usePreventLeaveApp = () => {
   );
 };
 
-export default usePreventLeaveApp;
+export default App;
+```

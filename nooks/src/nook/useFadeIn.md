@@ -1,3 +1,6 @@
+### 태그에 애니매이션주기
+
+```js
 import React, { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
@@ -17,7 +20,7 @@ const useFadeIn = (duration = 1, delay = 0) => {
   return { ref: element, style: { opacity: 0 } };
 };
 
-const useFadeInApp = () => {
+const App = () => {
   //duration 과 delay 값을 준다
   const fadeInH1 = useFadeIn(1, 2);
   const fadeInP = useFadeIn(5, 5);
@@ -29,4 +32,5 @@ const useFadeInApp = () => {
   );
 };
 
-export default useFadeInApp;
+export default App;
+```
