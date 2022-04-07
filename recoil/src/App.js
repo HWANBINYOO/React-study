@@ -1,8 +1,13 @@
+import React from "react";
+import ReadOnlyCount from "./component/ReadOnlyCount";
+import ReadWriteCount from "./component/ReadWriteCount";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-    </div>
+    <>
+      <ReadOnlyCount />
+      <ReadWriteCount />
+    </>
   );
 }
 
