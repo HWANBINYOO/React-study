@@ -17,4 +17,8 @@ export const countInputState = selector({
       inputState
     )} 입니다.`;
   },
+  set: ({ set }, newValue) => {
+    set(countState, Number(newValue));
+    set(inputState, newValue + "");
+  },
 });
