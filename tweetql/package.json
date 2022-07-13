@@ -1,20 +1,22 @@
 {
   "name": "tweetql",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. ### Overfetching(내가 필요한 것만 요청하여 필요한 것만 받아오는것)",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.10.0",
-    "graphql": "^16.5.0"
+    "graphql": "^16.5.0",
+    "node-fetch": "^3.2.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
   },
-  "type":"module"
+  "type": "module"
 }
