@@ -1,18 +1,8 @@
-import {AplloClient , gql, InMemoryCache} from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-const client = new AplloClient({
-    uri: "Running on http://localhost:4000/",
-    caches: new InMemoryCache(),
-})
-
-client.query({
-    query:gql`
-    {
-        allMovies {
-            title
-        }
-    }
-    `
-}).then(data => console.log(data))
+const client = new ApolloClient({
+    uri: "http://localhost:4000/",
+    cache: new InMemoryCache(),
+  });
 
 export default client
