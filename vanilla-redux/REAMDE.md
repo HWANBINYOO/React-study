@@ -108,3 +108,11 @@ root.render(
 < /Provider >
 )
 ```
+
+### useSelector()
+
+selector함수를 사용하여 Redux store state의 데이터를 가져올 수 있습니다.
+
+### useDispatch()
+
+이 훅은 Redux store에서 dispatch 함수에 대한 참조를 반환합니다.
