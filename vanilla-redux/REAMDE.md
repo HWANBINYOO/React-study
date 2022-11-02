@@ -93,3 +93,18 @@ default:
 return smth3
 }
 ✅ string으로 바로 쓰는 대신에 const variable로 선언해서 사용하기 -> 에러 발견 용이
+
+redux-react
+
+연결하기
+
+React Redux에는 Provider컴포넌트를 통해 앱의 다른 컴포넌트에서 Redux store를 사용할 수 있다
+
+```
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+< Provider store={store} >
+< App / >
+< /Provider >
+)
+```
