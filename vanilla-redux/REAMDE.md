@@ -116,3 +116,14 @@ selector함수를 사용하여 Redux store state의 데이터를 가져올 수 �
 ### useDispatch()
 
 이 훅은 Redux store에서 dispatch 함수에 대한 참조를 반환합니다.
+
+### createAction()
+
+Redux action type 및 creator를 정의하기 위한 helper 함수다.
+
+### createReducer()
+
+이 표기법은 조금 더 짧지만 TypeScript가 아닌 JavaScript에서만 작동하고 IDE와의 통합이 적으므로 대부분의 경우 "Builder Callback" 표기법을 추천한다.(타입스크립트 사용시 추천 방법)
+
+※ createReducer()에서는 새로운 state를 리턴하거나 state를 mutate할 수 있다.
+※ 뭔가를 리턴할 때는 새로운 state여야만한다.
