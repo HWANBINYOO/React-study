@@ -9,7 +9,8 @@ function ToDo({ text, id }) {
 
     const onClick = () => {
         dispatch(deleteToDo(id));
-        };    return (
+        };    
+  return (
     <li>
       <Link to={`/${id}`}>
         {text} 
